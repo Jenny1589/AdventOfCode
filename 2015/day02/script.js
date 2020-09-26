@@ -13,3 +13,12 @@ function problem01(){
 }
 
 console.log(problem01());
+
+function problem02(){
+    return dimensions.map(d => {
+        d = d.sort((a, b) => a - b);
+        return d[0] * 2 + d[1] * 2 + d[0] * d[1] * d[2];
+    }).reduce((acc, current) => acc + current);
+}
+
+console.log(problem02());
