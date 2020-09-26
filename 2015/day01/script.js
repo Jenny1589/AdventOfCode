@@ -12,4 +12,16 @@ function problem01(){
 
 console.log(problem01());
 
+function problem02(){
+    let floor = 0;
+    let pos = 0;
+    let instructions = day01.split('');
 
+    while(floor != -1 && pos++ < instructions.length){
+        floor += instructions[pos - 1]  == '(' ? 1 : -1;
+    }
+
+    return pos;
+}
+
+console.log(problem02());
