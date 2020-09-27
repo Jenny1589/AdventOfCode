@@ -5,6 +5,10 @@ function problem01(){
     return '00000'
 }
 
+function problem02(){
+    return '000000';
+}
+
 function problemSolver(subStr){
     let MD5 = 'ABCDE';
     let number = -1;
@@ -18,3 +22,4 @@ function problemSolver(subStr){
 }
 
 console.log(problemSolver(problem01));
+console.log(problemSolver(problem02));
