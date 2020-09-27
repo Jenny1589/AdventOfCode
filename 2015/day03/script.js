@@ -9,8 +9,15 @@ House.prototype.equals = function(house) {
     return this.x === house.x && this.y === house.y;
 }
 
-let santaPos = new House(0, 0);
-let visitedHouses = [new House(santaPos.x, santaPos.y)];
+const startPos = new House(0, 0);
+let santaToMove, santaPos, robotPos, visitedHouses;
+
+function initialize(){
+    santaPos = new House(startPos.x, startPos.y);
+    robotPos = new House(startPos.x, startPos.y);
+    santaToMove = santaPos;
+    visitedHouses = [new House(startPos.x, startPos.y)];
+}
 
 function moveSanta(instruction, position){
     switch(instruction){
@@ -29,16 +36,33 @@ function moveSanta(instruction, position){
     }
 }
 
+function tryAddHouse(position){
+    let house = visitedHouses.find(visited => visited.equals(position));
+    if(house === undefined) {
+        visitedHouses.push(new House(position.x, position.y));
+    }
+}
+
 function problem01(){
+    return santaPos;
+}
+
+function problem02(){  
+    return santaToMove.equals(santaPos) ? robotPos : santaPos;
+}
+
+function problemSolver(santa){
     day03.split('').forEach(instruction => {
-        moveSanta(instruction, santaPos);
-        let house = visitedHouses.find(visited => visited.equals(santaPos));
-        if(house === undefined) {
-            visitedHouses.push(new House(santaPos.x, santaPos.y));
-        }
+        santaToMove = santa();
+        moveSanta(instruction, santaToMove);
+        tryAddHouse(santaToMove);
     });
 
     return visitedHouses.length;
 }
 
-console.log(problem01());
+initialize();
+console.log(problemSolver(problem01));
+
+initialize();
+console.log(problemSolver(problem02));
