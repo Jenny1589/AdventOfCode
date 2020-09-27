@@ -1,0 +1,1 @@
+import { day05 } from '../data.js';
