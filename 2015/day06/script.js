@@ -48,6 +48,18 @@ let actions01 = {
     }
 }
 
+let actions02 = {
+    on: function(state){
+        return state + 1;
+    },
+    off: function(state){
+        return state - 1 < 0 ? 0 : state - 1;
+    },
+    toggle: function(state){
+        return state + 2;
+    }
+}
+
 function executeInstructions(actions){
     let instructions = readInstructions();
     instructions.forEach(i => {
@@ -67,12 +79,18 @@ function countGlowingLights() {
         ,0);
 }
 
-function problem01() {
+function problemSolver(actions){
     initialize();
-    executeInstructions(actions01);
+    executeInstructions(actions);
     console.log(countGlowingLights()); 
+}
+function problem01() {
+    problemSolver(actions01);
+}
+
+function problem02() {
+    problemSolver(actions02);
 }
 
 problem01();
-
-// First guess 418954 was too high
+problem02();
