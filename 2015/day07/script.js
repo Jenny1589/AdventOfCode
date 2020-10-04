@@ -52,7 +52,7 @@ function Gate(inputs, output){
     }
 }
 
-function problemSolver(){
+function problemSolver(bValue){
     let gates = day07.split(';')
     .map(i =>{
         let info = i.split(' ')
@@ -62,7 +62,12 @@ function problemSolver(){
         let gate = new Gate([], info[index]);
         wires[info[index]] = undefined;
 
-        gate.inputs.push(info[--index]);
+        if(gate.output === 'b' && bValue !== null){
+            gate.inputs.push(bValue);
+            index--;
+        }else{
+            gate.inputs.push(info[--index]);
+        }        
         if (index > 0) {
             gate.operation = info[--index];
             if (index > 0) {
@@ -85,7 +90,14 @@ function problemSolver(){
 
 function problem01(){    
     problemSolver(null);
-    console.log(wires['a']);
+}
+
+function problem02(){
+    problem01();
+    problemSolver(wires['a']);
 }
 
 problem01();
+console.log(wires['a']);
+problem02();
+console.log(wires['a']);
