@@ -3,24 +3,26 @@ import { day01 } from '../data.js';
 const puzzleData = day01.split(';')
     .map(data => Number.parseInt(data));
 
-const solution1 = () => {
-    let pos = 0;
+const solution1 = (sum) => {
 
-    while(pos < puzzleData.length && !sumIs2020){
-        var index = pos + 1;
+    for(const data of puzzleData){
+        const diff = sum - data;
 
-        while(index < puzzleData.length && !sumIs2020){
-            var sumIs2020 = puzzleData[pos] + puzzleData[index] === 2020;
-
-            index += sumIs2020 ? 0 : 1;
-        }
-
-        pos += sumIs2020 ? 0 : 1;
+        if(puzzleData.includes(diff)) return data * diff;
     }
 
-    return puzzleData[pos] * puzzleData[index];
+    return NaN;
 }
 
-const problem2 = 
+const solution2 = (sum) => {
+    for(const data of puzzleData){
+        const diff = sum - data;
 
-console.log(solution1());
+        const result = solution1(diff);
+
+        if(!isNaN(result)) return data * result;
+    }
+}
+
+console.log(solution1(2020));
+console.log(solution2(2020));
