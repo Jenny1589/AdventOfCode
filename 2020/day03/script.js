@@ -20,5 +20,7 @@ const countTrees = (xStep, yStep) => {
 }
 
 const solution1 = () => countTrees(3, 1);
+const solution2 = () => countTrees(1, 1) * solution1() * countTrees(5, 1) * countTrees(7, 1) * countTrees(1, 2);
 
 console.log(solution1());
+console.log(solution2());
