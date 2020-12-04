@@ -1,6 +1,28 @@
 {
-    "type": "module",
-    "dependencies": {
-        "crypto-js": "^4.0.0"
-    }
+  "type": "module",
+  "dependencies": {
+    "crypto-js": "^4.0.0",
+    "fs": "0.0.1-security"
+  },
+  "name": "adventofcode",
+  "description": "My solutions to the released years of Advent of Code https://adventofcode.com/",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jenny1589/AdventOfCode.git"
+  },
+  "keywords": [
+    "adventofcode"
+  ],
+  "author": "Jenny Kallerup",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jenny1589/AdventOfCode/issues"
+  },
+  "homepage": "https://github.com/Jenny1589/AdventOfCode#readme"
 }
