@@ -27,5 +27,7 @@ const puzzleData = day04.split('\r\n')
     }, []);
 
 const solution1 = () => puzzleData.filter(passport => passport.hasAllRequiredFields()).length;
+const solution2 = () => puzzleData.filter(passport => passport.hasAllRequiredFields() && passport.valuesAreValid()).length;
 
 console.log(solution1());
+console.log(solution2());
