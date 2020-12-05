@@ -24,9 +24,19 @@ const puzzleData = day05.map(s => {
     }
 });
 
-const solution1 = () => Math.max(...puzzleData.map(d => d.getId()));
+const seatIds = puzzleData.map(d => d.getId());
+
+const solution1 = () => Math.max(...seatIds);
+const solution2 = () => {
+    let id = Math.min(...seatIds);
+    
+    while(seatIds.includes(id)) id++;
+
+    return id;
+};
 
 console.log(solution1());
+console.log(solution2());
 
 
 
