@@ -10,19 +10,17 @@ const puzzleData = day04.split('\r\n')
         }
 
         if(!lineIsBlank){
-            const info = (line.split(/[:\s]/g));
+            const info = line.split(/[:\s]/g);
             const passportIndex = passportList.length - 1;
 
             for(let i = 0; i < info.length; i += 2){
                 const passport = passportList[passportIndex];
                 const fieldName = info[i];
-                const field = passport.fields.find(f => f.name === fieldName);
                 
                 const fieldVal = info[i + 1];
-                field.value = fieldVal;
+                passport.addInformation(fieldName, fieldVal);
             }
         }
-
         return passportList;
     }, []);
 
