@@ -1,16 +1,15 @@
 import { day02 } from '../data.js';
 
-const puzzleData = day02.split(';')
-    .map(line => {
-        let data = line.split(/:?[-\s]/);
+const puzzleData = day02.map(line => {
+    let data = line.split(/:?[-\s]/);
 
-        return {
-            val1: Number.parseInt(data[0]),
-            val2: Number.parseInt(data[1]),
-            letter: data[2],
-            password: data[3]
-        }
-    });
+    return {
+        val1: Number.parseInt(data[0]),
+        val2: Number.parseInt(data[1]),
+        letter: data[2],
+        password: data[3]
+    }
+});
 
 const isValid1 = ({password, letter, val1, val2}) => {    
     const regEx = new RegExp(`[${letter}]`, 'g');
