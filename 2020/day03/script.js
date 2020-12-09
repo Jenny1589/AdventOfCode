@@ -1,6 +1,4 @@
-import {day03} from '../data.js'
-
-const puzzleData = day03.split(';');
+import {day03 as puzzleData} from '../data.js';
 
 const isTree = (x, y) => puzzleData[y][x] === '#';
 const isEndOfMap = (y) => y === puzzleData.length - 1;  
