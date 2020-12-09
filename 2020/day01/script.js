@@ -1,7 +1,6 @@
 import { day01 } from '../data.js';
 
-const puzzleData = day01.split(';')
-    .map(data => Number.parseInt(data));
+const puzzleData = day01.map(data => Number.parseInt(data));
 
 const solution1 = (sum) => {
 
