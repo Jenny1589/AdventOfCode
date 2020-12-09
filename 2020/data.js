@@ -12,6 +12,7 @@ export let
     day05 = fs.readFileSync('../files/day05_puzzleData.txt').toString().split('\r\n'),
     day06 = fs.readFileSync('../files/day06_puzzleData.txt').toString().split('\r\n'),
     day07 = fs.readFileSync('../files/day07_puzzleData.txt').toString().split('\r\n'),
-    day08 = fs.readFileSync('../files/day08_puzzleData.txt').toString().split('\r\n');
+    day08 = fs.readFileSync('../files/day08_puzzleData.txt').toString().split('\r\n'),
+    day09 = fs.readFileSync('../files/day09_puzzleData.txt').toString().split('\r\n');
 
 
